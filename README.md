@@ -30,19 +30,17 @@ event-time processing and state management. Its applications are fault-tolerant 
 
 ### Prerequisites
 - python 3.5+ versions
-- Install apache-flink using pip command
+- Install apache-flink using pip command  
 ``` python -m pip install apache-flink ```
 - Two datasets to perform join operations
 
 ## Process
-#### - Creating Table Environment
-We need to configure the flink table environment using the BatchTableEnvironment as we are currently working on the batch data and create  an instance for the enivornment
-```t_env = BatchTableEnvironment.create(
-        environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build()) ```
+- #### Creating Table Environment
+We need to configure the flink table environment using the BatchTableEnvironment as we are currently working on the batch data and create  an instance for the enivornment  
+```t_env = BatchTableEnvironment.create(environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())```         
 
-#### - Creating Source and Sink Tables
+- #### Creating Source and Sink Tables
 After creating the table enivornment, we need to configure the source and sink table and need to define the schema for each table. We need to configure two sources as we are performing joins operations on two different datasets and also we need to configure the sink table with the schema that matches the expected results.
-
 
 ## Chandrakanth Polisetty - Set operations
 ## Prerequisites:
@@ -52,7 +50,7 @@ After creating the table enivornment, we need to configure the source and sink t
 ## Process
 
 * Two datasets containing information about the cricket players have been taken form www.kaggle.com
-* Create the table enivornment using the following commands
+* Create the table enivornment using the following commands  
 ```
 t_env = BatchTableEnvironment.create(
     environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())
