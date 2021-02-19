@@ -8,7 +8,7 @@ t_env = BatchTableEnvironment.create(
 # register Orders table and Result table sink in table environment
 source_data_path1 = "data/orders.csv"
 source_data_path2 = "data/customer.csv"
-result_data_path = "output/joins"
+result_data_path = "output_rohan/joins"
 source_ddl1 = f"""
         create table `Order`(
             CustomerID BIGINT,
@@ -49,6 +49,7 @@ t_env.execute_sql(sink_ddl)
 left = t_env.from_path("Order")
 right = t_env.from_path("Customer")
 left.join(right).where(left.CustomerID == right.CustID).select(left.OrderID , right.CustomerName, right.Country).execute_insert("Result").wait()
-#left_outer_result = left.left_outer_join(right, left.CustomerID == right.CustID).select(left.OrderID, right.CustomerName, right.Country)
-#right_outer_result = left.right_outer_join(right, left.CustomerID == right.CustID).select(left.OrderID, right.CustomerName, right.Country)
-#left_outer_result.execute_insert("Result").wait()
+left_outer_result = left.left_outer_join(right, left.CustomerID == right.CustID).select(left.OrderID, right.CustomerName, right.Country)
+right_outer_result = left.right_outer_join(right, left.CustomerID == right.CustID).select(left.OrderID, right.CustomerName, right.Country)
+left_outer_result.execute_insert("Result").wait()
+right_outer_result.execute_insert("Result").wait()
