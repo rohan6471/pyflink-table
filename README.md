@@ -67,6 +67,8 @@ Add python script to the cell and run the code pressing Ctlr + ENTER keys.
 
 Upload your dataset to colab.
 
+![ ](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/uploadingdataset.png)
+
 
 Install Apache Flink using command.
 
