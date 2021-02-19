@@ -5,8 +5,8 @@
 
 ## Team Members and Subtopics
 
-- Aggregation operations - Mohan Pratapa
 - Scan, Select and Filter - Kamal Reddy
+- Aggregation operations - Mohan Pratapa
 - Column Operations - Bhaskar Reddy
 - Set Operations - Chandrakanth Polisetty
 - Join operations on pyflink tables - Rohan Bhandari
