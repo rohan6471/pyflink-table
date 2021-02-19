@@ -21,3 +21,7 @@
 - Environment path set up needs to be done in the python file.
 - To execute the python script, type the command python aggregations.py
 - The result has been displayed in the output/aggregation folder in different partition files.
+
+# Flink
+Apache Flink is an open-source, unified stream-processing and batch-processing framework. It provides a high-throughput, low-latency streaming engine as well as support for 
+event-time processing and state management. Its applications are fault-tolerant in the event of machine failure and support exactly-once semantics.It does not provide its own data-storage system, but provides data-source and sink connectors to systems such as Amazon Kinesis, Apache Kafka, HDFS, Apache Cassandra, and ElasticSearch 
