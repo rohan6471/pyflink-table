@@ -116,5 +116,9 @@ Output:
 ![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/output.png)
 
 
+References:
 
+[About colaboratory](https://www.geeksforgeeks.org/how-to-run-python-code-on-google-colaboratory/)
+
+[apache flink example](https://ci.apache.org/projects/flink/flink-docs-stable/dev/python/table-api-users-guide/conversion_of_pandas.html#convert-pandas-dataframe-to-pyflink-table)
 
