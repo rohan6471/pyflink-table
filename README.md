@@ -37,7 +37,10 @@ event-time processing and state management. Its applications are fault-tolerant 
 ## Process
 - #### Creating Table Environment
 We need to configure the flink table environment using the BatchTableEnvironment as we are currently working on the batch data and create an instance for the enivornment.    
-```t_env = BatchTableEnvironment.create(environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())```         
+```
+t_env = BatchTableEnvironment.create(environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())
+
+```         
 
 - #### Creating Source and Sink Tables
 After creating the table enivornment, we need to configure the source and sink table and need to define the schema for each table. We need to configure two sources as we are performing joins operations on two different datasets and also we need to configure the sink table with the schema that matches the expected results.
