@@ -42,6 +42,51 @@ We need to configure the flink table environment using the BatchTableEnvironment
 - #### Creating Source and Sink Tables
 After creating the table enivornment, we need to configure the source and sink table and need to define the schema for each table. We need to configure two sources as we are performing joins operations on two different datasets and also we need to configure the sink table with the schema that matches the expected results.
 
+* Creating sourcing table  
+```
+source_ddl1 = f"""
+        create table `Order`(
+            CustomerID BIGINT,
+            OrderID BIGINT
+            ) with (
+            'connector' = 'filesystem',
+            'format' = 'csv',
+            'path' = '{source_data_path1}'
+        )
+        """ 
+   ```
+   * Creating sink Table  
+   ```
+   sink_ddl = f"""
+    create table `Result`(
+        OrderID BIGINT,
+        CustomerName VARCHAR,
+        Country VARCHAR        
+    ) with (
+        'connector' = 'filesystem',
+        'format' = 'csv',
+        'path' = '{result_data_path}'
+    )
+    """
+   ```
+  - #### Join Operations
+ After creating the source and sink tables we need to perform the join operations as below  
+ ```
+left.join(right).where(left.CustomerID == right.CustID).select(left.OrderID , right.CustomerName, right.Country).execute_insert("Result").wait()
+left_outer_result = left.left_outer_join(right, left.CustomerID == right.CustID).select(left.OrderID, right.CustomerName, right.Country)
+right_outer_result = left.right_outer_join(right, left.CustomerID == right.CustID).select(left.OrderID, right.CustomerName, right.Country)
+left_outer_result.execute_insert("Result").wait()
+right_outer_result.execute_insert("Result").wait()
+ ```
+ ## Execution
+ #### After completing the sript, we need to save the script to the root folder of our project.
+ 
+To execute, open the powershell as administrator from root folder of the project  
+Then run the following command  
+```python joins.py ```
+
+We get the output to the redirected output folder.
+ 
 ## Chandrakanth Polisetty - Set operations
 ## Prerequisites:
 * Two datasets to perform set operations
@@ -165,13 +210,3 @@ References:
 [About colaboratory](https://www.geeksforgeeks.org/how-to-run-python-code-on-google-colaboratory/)
 
 [apache flink example](https://ci.apache.org/projects/flink/flink-docs-stable/dev/python/table-api-users-guide/conversion_of_pandas.html#convert-pandas-dataframe-to-pyflink-table)
-
-## Chandrakanth Polisetty - Set operations
-## Prerequisites:
-* Two datasets to perform set operations
-* Apache Flink
-   
-
-
-
-
