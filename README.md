@@ -16,6 +16,9 @@
 Apache Flink is an open-source, unified stream-processing and batch-processing framework. It provides a high-throughput, low-latency streaming engine as well as support for 
 event-time processing and state management. Its applications are fault-tolerant in the event of machine failure and support exactly-once semantics.It does not provide its own data-storage system, but provides data-source and sink connectors to systems such as Amazon Kinesis, Apache Kafka, HDFS, Apache Cassandra, and ElasticSearch 
 
+## Scan, Select and Filter - Kamal Reddy
+
+In this project, I have taken data set which contains the data on countries and its respective count and performed operations like scan, select and filter.
 
 ## Aggregation operations - Mohan Pratapa
 
