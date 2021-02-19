@@ -12,8 +12,12 @@
 - Join operations on pyflink tables - Rohan Bhandari
 - Convert pandas dataframes to pyflink table - suma soma
 
+# Flink
+Apache Flink is an open-source, unified stream-processing and batch-processing framework. It provides a high-throughput, low-latency streaming engine as well as support for 
+event-time processing and state management. Its applications are fault-tolerant in the event of machine failure and support exactly-once semantics.It does not provide its own data-storage system, but provides data-source and sink connectors to systems such as Amazon Kinesis, Apache Kafka, HDFS, Apache Cassandra, and ElasticSearch 
 
-### Aggregation operations - Mohan Pratapa
+
+## Aggregation operations - Mohan Pratapa
 
 - Data set containing the names of different countires was taken from www.kaggle.com. 
 - Aggregation operations like Group by has been performed on the data set.
@@ -22,9 +26,50 @@
 - To execute the python script, type the command python aggregations.py
 - The result has been displayed in the output/aggregation folder in different partition files.
 
-# Flink
-Apache Flink is an open-source, unified stream-processing and batch-processing framework. It provides a high-throughput, low-latency streaming engine as well as support for 
-event-time processing and state management. Its applications are fault-tolerant in the event of machine failure and support exactly-once semantics.It does not provide its own data-storage system, but provides data-source and sink connectors to systems such as Amazon Kinesis, Apache Kafka, HDFS, Apache Cassandra, and ElasticSearch 
+## Join Operations on PyFlink Table - Rohan Bhandari
+
+### Prerequisites
+- python 3.5+ versions
+- Install apache-flink using pip command
+``` python -m pip install apache-flink ```
+- Two datasets to perform join operations
+
+## Process
+#### - Creating Table Environment
+We need to configure the flink table environment using the BatchTableEnvironment as we are currently working on the batch data and create  an instance for the enivornment
+```t_env = BatchTableEnvironment.create(
+        environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build()) ```
+
+#### - Creating Source and Sink Tables
+After creating the table enivornment, we need to configure the source and sink table and need to define the schema for each table. We need to configure two sources as we are performing joins operations on two different datasets and also we need to configure the sink table with the schema that matches the expected results.
+
+
+## Chandrakanth Polisetty - Set operations
+## Prerequisites:
+* Two datasets to perform set operations
+* Apache Flink
+
+## Process
+
+* Two datasets containing information about the cricket players have been taken form www.kaggle.com
+* Create the table enivornment using the following commands
+```
+t_env = BatchTableEnvironment.create(
+    environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())
+```
+* Developed the python script with source and sink tables in it.
+* These were the commands used to perform operations on datasets:
+```
+left = t_env.from_path("IPLDC")
+right = t_env.from_path("IPLMI")
+result = left.union(right)
+result1 =left.union_all(right)
+result2 = left.intersect(right)
+result3 = left.intersect_all(right)
+```
+* Run the script using "python filename.py"
+* result will be displayed in output/sets in your project folder.  
+
 
 ## SUMA SOMA 
 
@@ -116,31 +161,7 @@ Output:
 
 ![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/output.png)
 
-## Chandrakanth Polisetty - Set operations
-## Prerequisites:
-* Two datasets to perform set operations
-* Apache Flink
-
-## Process
-
-* Two datasets containing information about the cricket players have been taken form www.kaggle.com
-* Create the table enivornment using the following commands
-```
-t_env = BatchTableEnvironment.create(
-    environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())
-```
-* Developed the python script with source and sink tables in it.
-* These were the commands used to perform operations on datasets:
-```
-left = t_env.from_path("IPLDC")
-right = t_env.from_path("IPLMI")
-result = left.union(right)
-result1 =left.union_all(right)
-result2 = left.intersect(right)
-result3 = left.intersect_all(right)
-```
-* Run the script using "python filename.py"
-* result will be displayed in output/sets in your project folder.     
+   
 
 
 
