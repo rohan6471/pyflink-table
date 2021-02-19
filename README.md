@@ -67,6 +67,8 @@ Add python script to the cell and run the code pressing Ctlr + ENTER keys.
 
 Upload your dataset to colab.
 
+![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/uploadingdataset.png)
+
 
 Install Apache Flink using command.
 
@@ -106,11 +108,13 @@ Command to show the values
 
 Script: 
 
+![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/script.png)
 
 
 Output: 
 
 ## Chandrakanth Polisetty - Set operations
+![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/output.png)
 
 ## Prerequisites:
 * Two datasets to perform set operations
