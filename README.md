@@ -113,7 +113,34 @@ Script:
 
 Output: 
 
+
 ![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/output.png)
+
+## Chandrakanth Polisetty - Set operations
+## Prerequisites:
+* Two datasets to perform set operations
+* Apache Flink
+
+## Process
+
+* Two datasets containing information about the cricket players have been taken form www.kaggle.com
+* Create the table enivornment using the following commands
+```
+t_env = BatchTableEnvironment.create(
+    environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())
+```
+* Developed the python script with source and sink tables in it.
+* These were the commands used to perform operations on datasets:
+```
+left = t_env.from_path("IPLDC")
+right = t_env.from_path("IPLMI")
+result = left.union(right)
+result1 =left.union_all(right)
+result2 = left.intersect(right)
+result3 = left.intersect_all(right)
+```
+* Run the script using "python filename.py"
+* result will be displayed in output/sets in your project folder.     
 
 
 References:
