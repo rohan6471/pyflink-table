@@ -25,14 +25,9 @@ event-time processing and state management. Its applications are fault-tolerant 
 - Environment path set up needs to be done in the python file.
 - To execute the python script, type the command python aggregations.py
 - The result has been displayed in the output/aggregation folder in different partition files.
-## Column Operations- Bhaskar Reddy
-- i have taken the data set from an external source https://www.kaggle.com/
-- performed operation like adding column to the table, droping specified column from the table, replacing the columns.
-- Python script has been developed which has the source and sink tables setup. 
-- used the powershell terminal to excute the python script "python column.py
 
-## Join Operations on PyFlink Table - Rohan Bhandari
-
+# Rohan Bhandari
+## Join Operations on PyFlink Table 
 ### Prerequisites
 - python 3.5+ versions
 - Install apache-flink using pip command  
@@ -41,7 +36,7 @@ event-time processing and state management. Its applications are fault-tolerant 
 
 ## Process
 - #### Creating Table Environment
-We need to configure the flink table environment using the BatchTableEnvironment as we are currently working on the batch data and create  an instance for the enivornment  
+We need to configure the flink table environment using the BatchTableEnvironment as we are currently working on the batch data and create an instance for the enivornment.    
 ```t_env = BatchTableEnvironment.create(environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())```         
 
 - #### Creating Source and Sink Tables
@@ -75,7 +70,7 @@ source_ddl1 = f"""
     """
    ```
   - #### Join Operations
- After creating the source and sink tables we need to perform the join operations as below  
+ After creating the source and sink tables we need to perform the join operations as below:   
  ```
 left.join(right).where(left.CustomerID == right.CustID).select(left.OrderID , right.CustomerName, right.Country).execute_insert("Result").wait()
 left_outer_result = left.left_outer_join(right, left.CustomerID == right.CustID).select(left.OrderID, right.CustomerName, right.Country)
@@ -86,11 +81,15 @@ right_outer_result.execute_insert("Result").wait()
  ## Execution
  #### After completing the sript, we need to save the script to the root folder of our project.
  
-To execute, open the powershell as administrator from root folder of the project  
-Then run the following command  
-```python joins.py ```
+To execute, open the powershell as administrator from root folder of the project.    
+Then run the following command: 
 
+```python joins.py ```  
+ 
 We get the output to the redirected output folder.
+
+ ## References
+ - [https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/python/table-api-users-guide/operations.html](https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/python/table-api-users-guide/operations.html)
  
 ## Chandrakanth Polisetty - Set operations
 ## Prerequisites:
@@ -118,6 +117,11 @@ result3 = left.intersect_all(right)
 * Run the script using "python filename.py"
 * result will be displayed in output/sets in your project folder.  
 
+## Column Operations- Bhaskar Reddy
+- I have taken the data set from an external source https://www.kaggle.com/
+- Performed operation like adding column to the table, droping specified column from the table, replacing the columns.
+- Python script has been developed which has the source and sink tables setup. 
+- Used the powershell terminal to excute the python script "python column.py
 
 ## SUMA SOMA 
 
