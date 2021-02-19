@@ -108,10 +108,12 @@ Command to show the values
 
 Script: 
 
+![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/script.png)
 
 
 Output: 
 
+![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/output.png)
 
 
 
