@@ -25,6 +25,11 @@ event-time processing and state management. Its applications are fault-tolerant 
 - Environment path set up needs to be done in the python file.
 - To execute the python script, type the command python aggregations.py
 - The result has been displayed in the output/aggregation folder in different partition files.
+## Column Operations- Bhaskar Reddy
+- i have taken the data set from an external source https://www.kaggle.com/
+- performed operation like adding column to the table, droping specified column from the table, replacing the columns.
+- Python script has been developed which has the source and sink tables setup. 
+- used the powershell terminal to excute the python script "python column.py
 
 ## Join Operations on PyFlink Table - Rohan Bhandari
 
