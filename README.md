@@ -113,9 +113,10 @@ Script:
 
 Output: 
 
-## Chandrakanth Polisetty - Set operations
+
 ![image](https://github.com/rohan6471/pyflink-table/blob/main/sumas_pandas_flinktable/images/output.png)
 
+## Chandrakanth Polisetty - Set operations
 ## Prerequisites:
 * Two datasets to perform set operations
 * Apache Flink
