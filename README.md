@@ -136,6 +136,7 @@ t_env = BatchTableEnvironment.create(
 ```
 * Developed the python script with source and sink tables in it.
 * These were the commands used to perform operations on datasets:
+```
 source_ddl = f"""
         create table Orders(
             DEST_COUNTRY VARCHAR,
@@ -160,6 +161,8 @@ sink_ddl = f"""
     )
     """
 t_env.execute_sql(sink_ddl)
+
+```
 
 ## SUMA SOMA 
 
