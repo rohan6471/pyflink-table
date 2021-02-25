@@ -163,6 +163,24 @@ sink_ddl = f"""
 t_env.execute_sql(sink_ddl)
 
 ```
+```
+
+
+# specify table program
+orders = t_env.from_path("Orders")  # schema (a, b, c, rowtime)
+# result = orders.add_columns(concat(orders.DEST_COUNTRY, ' code 1'))
+# result.execute_insert("ResultC").wait()
+
+# result2 = orders.add_or_replace_columns(concat(orders.DEST_COUNTRY, ' code 1').alias('desc'))
+# result2.execute_insert("ResultC").wait()
+
+result3 = orders.drop_columns(orders.DEST_COUNTRY)
+result3.execute_insert("ResultC").wait()
+
+# orders.group_by("DEST_COUNTRY").select(orders.DEST_COUNTRY, orders.DEST_COUNTRY.count.alias('cnt')).execute_insert("Result").wait()
+
+```
+
 
 ## SUMA SOMA 
 
