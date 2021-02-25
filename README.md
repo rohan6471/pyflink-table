@@ -129,6 +129,38 @@ result3 = left.intersect_all(right)
 - Python script has been developed which has the source and sink tables setup. 
 - Used the powershell terminal to excute the python script "python column.py
 
+```
+# environment configuration
+t_env = BatchTableEnvironment.create(
+    environment_settings=EnvironmentSettings.new_instance().in_batch_mode().use_blink_planner().build())
+```
+* Developed the python script with source and sink tables in it.
+* These were the commands used to perform operations on datasets:
+source_ddl = f"""
+        create table Orders(
+            DEST_COUNTRY VARCHAR,
+            ORIGIN_COUNTRY VARCHAR,
+            Cnt BIGINT
+            ) with (
+            'connector' = 'filesystem',
+            'format' = 'csv',
+            'path' = '{source_data_path}'
+        )
+        """
+t_env.execute_sql(source_ddl)
+
+sink_ddl = f"""
+    create table `ResultC`(
+        ORIGIN_COUNTRY VARCHAR,
+        Cnt BIGINT        
+        ) with (
+        'connector' = 'filesystem',
+        'format' = 'csv',
+        'path' = '{result_data_path}'
+    )
+    """
+t_env.execute_sql(sink_ddl)
+
 ## SUMA SOMA 
 
 ## SUBTOPIC- Convert pandas dataframes to pyflink table
