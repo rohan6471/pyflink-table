@@ -20,6 +20,9 @@ event-time processing and state management. Its applications are fault-tolerant 
 
 In this project, I have taken data set which contains the data on countries and its respective count and performed operations like scan, select and filter.
 
+## VidGrid Link
+- [https://use.vg/ZwHgD1](https://use.vg/ZwHgD1)
+
 ## Aggregation operations - Mohan Pratapa
 
 - Data set containing the names of different countires was taken from www.kaggle.com. 
@@ -93,6 +96,9 @@ Then run the following command:
 ```python joins.py ```  
  
 We get the output to the redirected output folder.
+
+## VidGrid Link
+- [https://use.vg/xSUYqx](https://use.vg/xSUYqx)
 
  ## References
  - [https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/python/table-api-users-guide/operations.html](https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/python/table-api-users-guide/operations.html)
