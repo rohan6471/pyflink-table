@@ -104,6 +104,10 @@ We get the output to the redirected output folder.
  - [https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/python/table-api-users-guide/operations.html](https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/python/table-api-users-guide/operations.html)
  
 ## Chandrakanth Polisetty - Set operations
+## VidGRid Link
+ - [https://use.vg/p1LixT]( https://use.vg/p1LixT)
+
+
 ## Prerequisites:
 * Two datasets to perform set operations
 * Apache Flink
