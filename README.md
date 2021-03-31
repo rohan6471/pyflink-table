@@ -199,6 +199,8 @@ To convert pandas Dataframe to pyflink table i am using Colaboratory a product f
 
 Pandas DataFrames can be converted into a PyFlink Table. Internally, PyFlink will serialize the Pandas DataFrame using Arrow columnar format. The serialized data will be processed and deserialized in Arrow source during execution. The Arrow source can also be used in streaming jobs.
 
+## [Vidgrid Link] https://app.vidgrid.com/view/7rJtDa7oJWfv
+
 ## prerequisites
 
 - Apache Flink
