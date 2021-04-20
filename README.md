@@ -32,6 +32,9 @@ In this project, I have taken data set which contains the data on countries and 
 - To execute the python script, type the command python aggregations.py
 - The result has been displayed in the output/aggregation folder in different partition files.
 
+## VidGrid Link
+- [https://app.vidgrid.com/view/Dgog5MsBEA3a/?sr=FVYN98]
+
 # Rohan Bhandari
 ## Join Operations on PyFlink Table 
 ### Prerequisites
