@@ -191,6 +191,8 @@ result3.execute_insert("ResultC").wait()
 
 ```
 
+## VidGrid Link
+- [vidgrid video](https://app.vidgrid.com/view/KYptV20Vsx4t/?sr=9d8uDf1)
 
 ## SUMA SOMA 
 
